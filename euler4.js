@@ -5,20 +5,25 @@
 */
 
 function euler4(){
-	//Initialisation
+  //Initialisation
   var product1 = 999;
   var product2 = 999;
   var result;
   var largestResult = 0;
+
   //Loop through products
   for (var i = 1; i <= product1; i++){
-  	for (var j = 1; j <= product2; j++){
-    	result = i * j;
+    for (var j = 1; j <= product2; j++){
+      result = i * j;
       reverseResult = String(result).split("").reverse().join("");
+
       if (String(result) == reverseResult){
-      	console.log(i +" * "+ j +" = "+ result);
+	//Prints if the number is identical when reversed (a palindrome)	
+        console.log(i +" * "+ j +" = "+ result);
       	console.log("reverse = " + reverseResult);
         console.log("Palindrome!");
+
+	//Checks to see if the result is bigger than any that came previously
         if (result > largestResult){
         	largestResult = result;
        	}
