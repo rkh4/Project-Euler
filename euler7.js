@@ -16,15 +16,15 @@ function primeTest(numberToTest){
   var numberCount = numberToTest-2;
   
   for (var i=2; i<numberToTest;i++){
-  	if(numberCount > 1){
-      if (numberToTest%i ==0){
-        // 'numberToTest' is divisible by 'i' ,therefore not a prime.
-        break;
-      } else {
-        numberCount--;
-      }
-		} else {
-    	//'numberToTest' is prime!
+    if(numberCount > 1){
+    if (numberToTest%i ==0){
+      // 'numberToTest' is divisible by 'i' ,therefore not a prime.
+      break;
+    } else {
+      numberCount--;
+    }
+  } else {
+      //'numberToTest' is prime!
       primes.push(numberToTest);
     }  
   }
@@ -32,8 +32,8 @@ function primeTest(numberToTest){
 
 //Run test against a number, untill 'Primes' array is 10,001 items long
 function get10001Prime(){
-	while(primes.length < 10001){
-  	primeTest(currentNumber);
+  while(primes.length < 10001){
+    primeTest(currentNumber);
     currentNumber++;
   }
 }
@@ -44,8 +44,8 @@ get10001Prime();
 console.log(primes[primes.length-1]);
 
 
-/*   	-----------------------------------ANSWER------------------------------------
-*   	The Answer I got for this question was '104743' which was proved to be correct
+/*    -----------------------------------ANSWER------------------------------------
+*     The Answer I got for this question was '104743' which was proved to be correct
 *
 *     See: https://projecteuler.net/problem=7
 */
